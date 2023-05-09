@@ -1,0 +1,21 @@
+class Account:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+        
+    def deposit(self,deposit):
+        self.balance = self.balance + deposit
+        print('amount of {} will be deposited'.format(deposit))
+        
+    def withdraw(self,withdraw):
+        if withdraw <= self.balance:
+            self.balance = self.balance - withdraw 
+            print('{} rupees withdraw completed'.format(withdraw))
+            
+        else:
+            print('Funds Unavailable!')
+            
+    # The __str__() method is used to print the object    
+    def __str__(self):
+        print(f"Account owner: {self.owner}")
+        return (f'Account balance: Rs-{self.balance}')
